@@ -11,12 +11,12 @@ import fpformat
 import contextlib
 
 def formatSize(amt):
-    """Format a size as a string in MB"""
+    """Format a size as a string  MB"""
     return fpformat.fix(amt / 1024000., 1)
 
 def spin(c):
     """print out an ASCII 'spinner' based on the value of counter 'c'"""
-    spin = ".:|'"
+    spin = ".:|'"u
     return (spin[c % len(spin)])
 
 class ConfigOpener(urllib.FancyURLopener):

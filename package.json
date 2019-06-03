@@ -1,0 +1,59 @@
+{
+  "name": "untitled-game-project",
+  "version": "1.0.0",
+  "description": "A web game collaboration between [@GreySqwrl](https://github.com/GreySqwrl) and [@mysterycommand](https://github.com/mysterycommand)",
+  "repository": "git@github.com:kindness-is-the-dankest-meme/untitled-game-project.git",
+  "contributors": [
+    "Matt Hayes <matt@mysterycommand.com>",
+    "Ben Pullen"
+  ],
+  "license": "(MIT OR Apache-2.0)",
+  "private": true,
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.9.0",
+    "yarn": "1.16.0"
+  },
+  "scripts": {
+    "reset": "yarn clean node_modules/",
+    "clean": "cargo clean && rm -rf .cache/ coverage/ dist/ pkg/",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url=./",
+    "serve": "yarn build && npx serve dist",
+    "lint": "tslint 'src/**/*.ts' && cargo fmt --all -- --check && cargo clippy",
+    "test": "jest && cargo build && cargo test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.4.5",
+    "@babel/preset-typescript": "7.3.3",
+    "@semantic-release/changelog": "3.0.2",
+    "@semantic-release/commit-analyzer": "6.1.0",
+    "@semantic-release/git": "7.0.8",
+    "@semantic-release/github": "5.2.10",
+    "@semantic-release/npm": "5.1.7",
+    "@semantic-release/release-notes-generator": "7.1.4",
+    "@types/jest": "24.0.13",
+    "@types/node": "12.0.2",
+    "babel-jest": "24.8.0",
+    "commitizen": "3.1.1",
+    "cz-conventional-changelog": "2.1.0",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "24.8.0",
+    "parcel-bundler": "1.12.3",
+    "parcel-plugin-wasm-pack": "3.0.1",
+    "prettier": "1.17.1",
+    "semantic-release": "15.13.12",
+    "semantic-release-github-pr": "https://github.com/mysterycommand/semantic-release-github-pr.git#fix/34-and-35",
+    "ts-jest": "24.0.2",
+    "tslint": "5.16.0",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-plugin-prettier": "2.0.1",
+    "typescript": "3.4.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
